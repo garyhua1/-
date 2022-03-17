@@ -1,0 +1,87 @@
+#include"stdio.h"
+#include"conio.h"
+#include"windows.h"
+#include"cstdio"
+#include"stdlib.h"
+
+
+int main()
+{
+	system("color	b2");
+	printf("欢迎空降迷宫\n你可以通过w,a,s,d控制方向\n\n");
+	char a[20][20]={{"*#*********"},
+					{"***###*###*"},
+					{"###**#****#"},
+					{"*#**###**#*"},
+					{"***********"},
+					{"#####*##*##"},
+					{"**#*****#*E"},
+					{"***#*###**#"},
+					{"*#*********"}};
+		//(10,12)
+
+	int x,y;
+	char ch;
+	x=1; y=1;
+	for(int i=0;i<=9;i++)
+		puts(a[i]);
+		while(1)
+		{
+			ch=getch();
+			if(ch=='s'&&a[x+1][y]!='#'&&a[x+1][y]!='\0')
+			{
+			
+					a[x][y]='*';
+					x++;
+					a[x][y]='0';
+				
+			}
+			 else if(ch=='w'&&a[x-1][y]!='#'&&a[x-1][y]!='\0')
+			{
+			
+					a[x][y]='*';
+					x--;
+					a[x][y]='0';
+				
+			}
+			 else if(ch=='a'&&a[x][y-1]!='#'&&a[x][y-1]!='\0')
+			{
+			
+					a[x][y]='*';
+					y--;
+					a[x][y]='0';
+				
+			}
+			 else if(ch=='d'&&a[x][y+1]!='#'&&a[x][y+1]!='\0')
+			 {
+				
+					a[x][y]='*';
+					y++;
+					a[x][y]='0';
+				
+			 }
+				system("cls");
+
+
+		for(int i=0;i<=9;i++)
+			puts(a[i]);
+
+		 if(x==6&&y==10)
+
+			break;
+	}
+			Sleep(500);
+			for(int as=1;as<6;as++)
+			{
+				system("color 70");
+				system("color 2f");
+				system("color 9a");
+				system("color 3d");
+
+
+			}
+	printf("      大吉大利，今晚吃鸡！\n");
+
+
+return 0;
+}
